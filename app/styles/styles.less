@@ -1,0 +1,96 @@
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+/*  ~ ~ ~ ~ ~  CSS By Chris Gregory ~ ~ ~ ~  */
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+/* ~ ~ ~ ~ Fonts ~ ~ ~ ~ */
+
+@font-face {
+	font-family: "inconsolata-bold";
+	src: url("../fonts/Inconsolata/Inconsolata-Bold.ttf");
+}
+
+@font-face {
+	font-family: "inconsolata-regular";
+	src: url("../fonts/Inconsolata/Inconsolata-Regular.ttf");
+}
+
+@font-face {
+	font-family: "nexa-bold";
+	src: url("../fonts/Nexa/Nexa-Bold.otf");
+}
+
+@font-face {
+	font-family: "nexa-light";
+	src: url("../fonts/Nexa/Nexa-Light.otf");
+}
+
+@font-face {
+	font-family: "open-sans-bold";
+	src: url("../fonts/OpenSans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+	font-family: "open-sans-regular";
+	src: url("../fonts/OpenSans/OpenSans-Regular.ttf");
+}
+
+/* ~ ~ ~ ~ Colors ~ ~ ~ ~ */
+
+@classic-blue: rgb(72, 145, 206);
+@accessible-blue: rgb(52, 96, 148);
+@jumbo-grey: rgb(198, 190, 181);
+@urban-grey: rgb(100, 100, 105);
+@cloud-white: rgb(253, 253, 255);
+
+/* ~ ~ ~ ~ General ~ ~ ~ ~ */
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: "arial";
+}
+
+.no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+::-moz-selection {
+    background: @jumbo-grey;
+}
+
+::selection {
+    background: @jumbo-grey;
+}
+
+/* ~ ~ ~ ~ Header ~ ~ ~ ~ */
+
+.header {
+	width: 100%;
+	height: 50px;
+	background-color: @accessible-blue;
+}
+
+.title {
+	font-family: "nexa-bold";
+	color: darken(@cloud-white, 5%);
+	font-size: 25px;
+	display: inline-block;
+	margin: 13px 30px;
+}
+
+/* ~ ~ ~ ~ Content ~ ~ ~ ~ */
+
+.content {
+	width: 100%;
+	height: calc(100% - 50px);
+	font-family: "open-sans-regular";
+	padding: 30px 40px 0px;
+}
+
+
+
+//
