@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Split</title>
+	<title>Split Plot</title>
 	<meta charset="utf-8" />
 
 	<link href="styles/reset.css" rel="stylesheet" type="text/css">
@@ -12,23 +12,31 @@
 	<script src="scripts/lib/fontfaceobserver.min.js"></script>
 	<script src="scripts/lib/loadCSS.js"></script>
 	<script src="scripts/lib/paper.min.js"></script>
+	<script src="scripts/lib/moment.min.js"></script>
 </head>
 <body>
     <div class="header">
-        <span class="title">My Split</span>
+        <span class="title">Split Plot</span>
     </div><div class="content">
 		<div class="about">
 			<div class="about-section">
-				<span class="about-section-title">Welcome to My Split</span>
-		        <span class="about-section-text">This webapp allows track and cross country coaches to easily create split sheets tailored to the their athletes' workouts.</span>
+				<span class="about-section-title">Welcome to Split Plot</span>
+		        <span class="about-section-text">This website allows track and
+					cross country coaches to easily create split sheets tailored
+					to the their athletes' workouts. Fill out the form below and
+					press the create button when you are done. When everything
+					looks right you can download with the download button.
+				</span>
 			</div>
 		</div>
 
-		<a href="#" id="download-button-link">
+		<a id="download-button-link">
 			<div class="download-button">Download</div>
 		</a>
 
-		<canvas id="my-canvas" resize></canvas>
+		<div class="canvas-wrap">
+			<canvas id="my-canvas"></canvas>
+		<div>
     </div>
 
 	<script type="module" src="scripts/js/main.js"></script>

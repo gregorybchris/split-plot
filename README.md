@@ -1,4 +1,4 @@
-# My Split
+# Split Plot
 
-My Split is a webapp that allows track and cross country coaches to easily create
+Split Plot is a webapp that allows track and cross country coaches to easily create
 split sheets tailored to the their athletes' workouts.

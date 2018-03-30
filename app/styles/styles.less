@@ -94,11 +94,13 @@ html, body {
 }
 
 .about-section-text {
+	text-indent: 12px;
 	font-family: "Open Sans Regular";
 	color: @urban-grey;
-	padding: 0px 20px;
+	padding: 0px 50px;
 	display: block;
 	font-size: 16px;
+	line-height: 25px;
 }
 
 #download-button-link {
@@ -108,23 +110,33 @@ html, body {
 .download-button {
 	font-family: "Nexa Bold";
 	display: inline-block;
-	padding: 4px 8px;
+	padding: 6px 8px 4px;
 	margin-left: 50px;
+	box-sizing: border-box;
 	border: 3px solid @classic-blue;
 	color: @urban-grey;
-	transition: border 300ms;
+	transition: border 300ms, background-color 300ms, color 33ms;
 }
 
 .download-button:hover {
-	border: 3px solid darken(@classic-blue, 20%);
+	background-color: @classic-blue;
+	color: @white;
+	cursor: pointer;
 }
 
 
 /* ~ ~ ~ ~ Canvas ~ ~ ~ ~ */
 
-#my-canvas {
-	display: none;
+.canvas-wrap {
+	// position: absolute;
+	// top: -9999px;
+	// left: -9999px;
 }
+
+#my-canvas {}
+
+
+
 
 
 
