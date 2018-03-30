@@ -9,12 +9,26 @@
 
 	<script src="scripts/lib/less.min.js" type="text/javascript"></script>
 	<script src="scripts/lib/d3.min.js"></script>
+	<script src="scripts/lib/fontfaceobserver.min.js"></script>
+	<script src="scripts/lib/loadCSS.js"></script>
+	<script src="scripts/lib/paper.min.js"></script>
 </head>
 <body>
     <div class="header">
         <span class="title">My Split</span>
     </div><div class="content">
-        <p>Welcome to My Split</p>
+		<div class="about">
+			<div class="about-section">
+				<span class="about-section-title">Welcome to My Split</span>
+		        <span class="about-section-text">This webapp allows track and cross country coaches to easily create split sheets tailored to the their athletes' workouts.</span>
+			</div>
+		</div>
+
+		<a href="#" id="download-button-link">
+			<div class="download-button">Download</div>
+		</a>
+
+		<canvas id="my-canvas" resize></canvas>
     </div>
 
 	<script type="module" src="scripts/js/main.js"></script>

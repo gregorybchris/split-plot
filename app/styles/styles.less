@@ -5,32 +5,22 @@
 /* ~ ~ ~ ~ Fonts ~ ~ ~ ~ */
 
 @font-face {
-	font-family: "inconsolata-bold";
-	src: url("../fonts/Inconsolata/Inconsolata-Bold.ttf");
-}
-
-@font-face {
-	font-family: "inconsolata-regular";
-	src: url("../fonts/Inconsolata/Inconsolata-Regular.ttf");
-}
-
-@font-face {
-	font-family: "nexa-bold";
+	font-family: "Nexa Bold";
 	src: url("../fonts/Nexa/Nexa-Bold.otf");
 }
 
 @font-face {
-	font-family: "nexa-light";
+	font-family: "Nexa Light";
 	src: url("../fonts/Nexa/Nexa-Light.otf");
 }
 
 @font-face {
-	font-family: "open-sans-bold";
+	font-family: "Open Sans Bold";
 	src: url("../fonts/OpenSans/OpenSans-Bold.ttf");
 }
 
 @font-face {
-	font-family: "open-sans-regular";
+	font-family: "Open Sans Regular";
 	src: url("../fonts/OpenSans/OpenSans-Regular.ttf");
 }
 
@@ -40,7 +30,8 @@
 @accessible-blue: rgb(52, 96, 148);
 @jumbo-grey: rgb(198, 190, 181);
 @urban-grey: rgb(100, 100, 105);
-@cloud-white: rgb(253, 253, 255);
+@black: rgb(0, 0, 0);
+@white: rgb(255, 255, 255);
 
 /* ~ ~ ~ ~ General ~ ~ ~ ~ */
 
@@ -75,8 +66,8 @@ html, body {
 }
 
 .title {
-	font-family: "nexa-bold";
-	color: darken(@cloud-white, 5%);
+	font-family: "Nexa Bold";
+	color: darken(@white, 5%);
 	font-size: 25px;
 	display: inline-block;
 	margin: 13px 30px;
@@ -87,8 +78,52 @@ html, body {
 .content {
 	width: 100%;
 	height: calc(100% - 50px);
-	font-family: "open-sans-regular";
-	padding: 30px 40px 0px;
+	padding: 30px 10px 0px;
+}
+
+.about-section {
+	padding: 10px 40px 30px;
+}
+
+.about-section-title {
+	font-family: "Nexa Bold";
+	color: darken(@urban-grey, 5%);
+	display: block;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.about-section-text {
+	font-family: "Open Sans Regular";
+	color: @urban-grey;
+	padding: 0px 20px;
+	display: block;
+	font-size: 16px;
+}
+
+#download-button-link {
+	text-decoration: none;
+}
+
+.download-button {
+	font-family: "Nexa Bold";
+	display: inline-block;
+	padding: 4px 8px;
+	margin-left: 50px;
+	border: 3px solid @classic-blue;
+	color: @urban-grey;
+	transition: border 300ms;
+}
+
+.download-button:hover {
+	border: 3px solid darken(@classic-blue, 20%);
+}
+
+
+/* ~ ~ ~ ~ Canvas ~ ~ ~ ~ */
+
+#my-canvas {
+	display: none;
 }
 
 
