@@ -103,25 +103,34 @@ html, body {
 	line-height: 25px;
 }
 
-#download-button-link {
+.button-wrap {
+	margin: 10px 0px 0px 100px;
+}
+
+.button-link {
 	text-decoration: none;
 }
 
-.download-button {
+.button {
 	font-family: "Nexa Bold";
 	display: inline-block;
 	padding: 6px 8px 4px;
-	margin-left: 50px;
+	margin: 0px 10px;
 	box-sizing: border-box;
 	border: 3px solid @classic-blue;
 	color: @urban-grey;
 	transition: border 300ms, background-color 300ms, color 33ms;
 }
 
-.download-button:hover {
+.button:hover {
 	background-color: @classic-blue;
 	color: @white;
 	cursor: pointer;
+}
+
+.button:active {
+	background-color: darken(@classic-blue, 15%);
+	border-color: darken(@classic-blue, 15%);
 }
 
 
