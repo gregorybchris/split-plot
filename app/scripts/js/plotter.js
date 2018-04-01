@@ -78,25 +78,25 @@ export class Plotter {
         })
     }
 
-    static countReps(workout) {
-
-    }
-
     plotWorkouts() {
         let workouts = this.sheet.getWorkouts()
         console.log("Workouts: ", workouts)
+        
         const defRepW = 0.75 * inch
         const defRepH = 0.25 * inch
         let workoutOffsetY = 2.75 * inch
         const workoutSpacing = 0.5 * inch
+
         workouts.forEach(function(workout, wi) {
             let sets = workout.getSets()
             let athletes = workout.getAthletes()
             const totalReps = workout.countReps()
             const repW = Math.min(defRepW, (width - 2 * inch) / totalReps)
             const repH = defRepH
+
             athletes.forEach(function(athlete, ai) {
                 const repY = (ai * repH) + workoutOffsetY
+
                 sets.forEach(function(set, si) {
                     const setW = repW * set.length
                     const setH = defRepH * athletes.length
@@ -105,6 +105,7 @@ export class Plotter {
                     let setRect = new Path.Rectangle(new Rectangle(setX, setY, setW, setH))
                     setRect.strokeColor = 'black'
                     setRect.strokeWidth = 2
+
                     set.forEach(function(rep, ri) {
                         const repX = margin + (ri * repW) + (si * setW)
                         let repRect = new Path.Rectangle(new Rectangle(repX, repY, repW, repH))
@@ -112,10 +113,8 @@ export class Plotter {
                         repRect.strokeWidth = 1
                     })
                 })
-                if (ai == athletes.length - 1) {
-                    console.log("OK", workoutOffsetY)
+                if (ai == athletes.length - 1)
                     workoutOffsetY = repY + workoutSpacing
-                }
             })
         })
     }

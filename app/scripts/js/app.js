@@ -34,10 +34,10 @@ export class App {
     enableButtonListeners() {
         console.log("Enable Buttons")
 
-        let createButton = $('#create-button')
-        createButton.removeClass('disabled')
-        createButton[0].addEventListener('click', function() {
-            this.createSplitSheet()
+        let previewButton = $('#preview-button')
+        previewButton.removeClass('disabled')
+        previewButton[0].addEventListener('click', function() {
+            this.previewSplitSheet()
         }.bind(this))
 
         let downloadButton = $('#download-button')
@@ -47,8 +47,8 @@ export class App {
         }.bind(this))
     }
 
-    createSplitSheet() {
-        console.log("Create Split Sheet")
+    previewSplitSheet() {
+        console.log("Preview Split Sheet")
         this.plotter.plot()
         let dataURL = this.canvas.toDataURL("image/png")
         let newWindow = window.open("", '_blank')
@@ -57,6 +57,8 @@ export class App {
             style: "border:0; height:100%; width:100%"
         })[0].outerHTML
         newWindow.document.write(iframe)
+        newWindow.document.title = "Split Plot Preview"
+        newWindow.document.close()
     }
 
     downloadSplitSheet(button) {
