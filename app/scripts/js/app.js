@@ -1,10 +1,11 @@
 import { Plotter } from "./plotter.js"
 import { Workout } from "./workout.js"
 import { SplitSheet } from "./split-sheet.js"
+import { createHDCanvas } from "./hd-canvas.js"
 
 export class App {
     constructor() {
-        this.canvas = $('#my-canvas')[0]
+        this.canvas = createHDCanvas($('#my-canvas')[0], 425, 550)
         this.sheet = new SplitSheet()
         this.plotter = new Plotter(this.canvas, this.sheet)
     }

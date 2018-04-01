@@ -1,6 +1,6 @@
 import { Workout } from './workout.js'
 
-const inch = 50
+const inch = 25
 const width = 8.5 * inch
 const height = 11 * inch
 const margin = 1 * inch
@@ -22,8 +22,6 @@ export class Plotter {
     }
 
     setupCanvas() {
-        this.canvas.style.width  = '425px'
-        this.canvas.style.height = '550px'
         paper.install(window);
         paper.setup(this.canvas)
     }
@@ -49,7 +47,7 @@ export class Plotter {
             point: new Point(margin, margin),
             content: dateString,
             fontFamily: 'Consolas',
-            fontSize: 10
+            fontSize: 5
         })
 
         let coachString = 'Coach: ' + this.sheet.getCoach()
@@ -58,15 +56,16 @@ export class Plotter {
             point: coachPoint,
             content: coachString,
             fontFamily: 'Consolas',
-            fontSize: 10
+            fontSize: 5
         })
         coachText.point = coachPoint.add([-coachText.bounds.width, 0])
 
-        let path = new Path()
-        path.strokeColor = 'black'
+        let headerLine = new Path()
+        headerLine.strokeColor = 'black'
+        headerLine.strokeWidth = 0.5
         let start = new Point(margin, margin + 0.0625 * inch)
-        path.moveTo(start)
-        path.lineTo(new Point(width - margin, margin + 0.0625 * inch))
+        headerLine.moveTo(start)
+        headerLine.lineTo(new Point(width - margin, margin + 0.0625 * inch))
     }
 
     plotNotes() {
@@ -74,14 +73,14 @@ export class Plotter {
             point: new Point(1.5 * inch, 1.5 * inch),
             content: this.sheet.getNotes(),
             fontFamily: 'Consolas',
-            fontSize: 8
+            fontSize: 3
         })
     }
 
     plotWorkouts() {
         let workouts = this.sheet.getWorkouts()
-        console.log("Workouts: ", workouts)
-        
+        // console.log("Workouts: ", workouts)
+
         const defRepW = 0.75 * inch
         const defRepH = 0.25 * inch
         let workoutOffsetY = 2.75 * inch
@@ -104,13 +103,13 @@ export class Plotter {
                     const setY = workoutOffsetY
                     let setRect = new Path.Rectangle(new Rectangle(setX, setY, setW, setH))
                     setRect.strokeColor = 'black'
-                    setRect.strokeWidth = 2
+                    setRect.strokeWidth = 1
 
                     set.forEach(function(rep, ri) {
                         const repX = margin + (ri * repW) + (si * setW)
                         let repRect = new Path.Rectangle(new Rectangle(repX, repY, repW, repH))
                         repRect.strokeColor = 'black'
-                        repRect.strokeWidth = 1
+                        repRect.strokeWidth = 0.5
                     })
                 })
                 if (ai == athletes.length - 1)
