@@ -1,4 +1,6 @@
 import { App } from "./app.js"
 
-const app = new App()
-app.run()
+(function() {
+    const app = new App()
+    app.run()
+})();

@@ -2,18 +2,27 @@ import { Plotter } from "./plotter.js"
 
 export class App {
     constructor() {
-        this.canvas = document.getElementById('my-canvas')
+        this.canvas = $('#my-canvas')[0]
         this.plotter = new Plotter(this.canvas)
     }
 
     run() {
-        this.createButtonListeners()
+        this.setupButtonListeners()
     }
 
-    createButtonListeners() {
-        let downloadButton = document.getElementById('download-button-link')
+    setupButtonListeners() {
+        let downloadButton = $('#download-button-link')[0]
         downloadButton.addEventListener('click', function() {
             this.downloadSplitSheet(downloadButton)
+        }.bind(this))
+
+        let createButton = $('#create-button-link')[0]
+        createButton.addEventListener('click', function() {
+            let dataURL = this.canvas.toDataURL("image/png")
+            let iFrame = '<iframe src="' + dataURL + '"style="border:0; \
+                height:100%; width:100%"></iframe>'
+            let newWindow = window.open("", '_blank');
+            newWindow.document.write(iFrame)
         }.bind(this))
     }
 
