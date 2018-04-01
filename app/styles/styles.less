@@ -108,11 +108,8 @@ html, body {
 	margin: 10px 0px 0px 100px;
 }
 
-.button-link {
-	text-decoration: none;
-}
-
 .button {
+	text-decoration: none;
 	font-family: "Nexa Bold";
 	display: inline-block;
 	padding: 6px 8px 4px;
@@ -134,20 +131,22 @@ html, body {
 	border-color: darken(@classic-blue, 15%);
 }
 
+.button.disabled {
+	border: 3px solid lighten(@classic-blue, 15%);
+	color: lighten(@urban-grey, 30%);
+	cursor: default;
+}
+
+.button.disabled:hover {
+	color: lighten(@urban-grey, 30%);
+	background-color: @white;
+}
+
 
 /* ~ ~ ~ ~ Canvas ~ ~ ~ ~ */
 
 .canvas-wrap {
-	// position: absolute;
-	// top: -9999px;
-	// left: -9999px;
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
 }
-
-#my-canvas {}
-
-
-
-
-
-
-//
